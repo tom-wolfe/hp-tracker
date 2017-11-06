@@ -16,7 +16,7 @@
       "polyfills": "polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
-      "testTsconfig": "tsconfig.spec.json",
+      "testTsconfig": "tsfconfig.spec.json",
       "prefix": "app",
       "styles": [
         "styles/styles.scss"

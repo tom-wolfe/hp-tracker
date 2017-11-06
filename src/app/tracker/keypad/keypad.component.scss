@@ -1,0 +1,44 @@
+@import '~styles/_variables.scss';
+
+$control-padding: 2px;
+
+.keypad {
+  font-size: 2em;
+
+  .display {
+    display: flex;
+    padding: $control-padding;
+    width: 100%;
+    
+    .value {
+      background-color: $gray-700;
+      border-color: $gray-800;
+      font-family: 'Consolas', 'Courier', monospace;
+      padding: 0 8px 0 8px;
+      text-align: right;
+      flex-grow: 1;
+    }
+    .clear {
+      font-size: 0.5em;;
+    }
+  }
+
+  .numbers {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+
+    .key {
+      display: flex;
+      padding: $control-padding;
+      width: 33.333%;
+      
+      button {
+        font-size: 0.6em;
+        width: 100%;
+      }
+    }
+  }
+}
