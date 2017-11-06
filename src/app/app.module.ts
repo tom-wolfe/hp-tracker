@@ -4,15 +4,16 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
-import { appReducer } from './state/reducers/app.reducer';
+import { sharedReducer } from './state';
 import { StoreModule } from '@ngrx/store';
+import { TrackerModule } from './tracker';
 
 @NgModule({
   imports: [
     SharedModule,
-    // TrackerModule,
+    TrackerModule,
     CoreModule,
-    StoreModule.forRoot({ app: appReducer }),
+    StoreModule.forRoot({ shared: sharedReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 5 }),
   ],
   declarations: [AppComponent],
