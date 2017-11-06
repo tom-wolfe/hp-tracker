@@ -3,6 +3,8 @@ export interface TrackerState {
 }
 
 export interface HPState {
-  current: number;
-  max: number;
+  currentHp: number;
+  maxHp: number;
+  tempHp: number;
+  tempMaxHp: number;
 }
