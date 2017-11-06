@@ -9,7 +9,7 @@ const MODULES = [
   HttpModule,
   BrowserModule,
   BrowserAnimationsModule
-]
+];
 
 @NgModule({
   imports: [

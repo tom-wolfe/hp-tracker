@@ -18,4 +18,4 @@ export function sharedReducer(state: SharedState = initialState, action: SharedA
       return state;
     }
   }
-};
+}
