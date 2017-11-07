@@ -1,0 +1,26 @@
+@import '~styles/_variables.scss';
+
+.tracker {
+  margin: 15px auto;
+  max-width: 700px;
+
+  .hp-display {
+    background: transparent;
+    border: none;
+    margin-bottom: 2px;
+
+    .card-body, .card-footer {
+      padding: 0.375rem 0.75rem;
+      text-align: center;
+    }
+    .card-body {
+      background-color: $gray-700;
+      border-color: $gray-800;
+      font-size: 2em;
+    }
+    .card-footer {
+      background: transparent;
+      border: none;
+    }
+  }
+}

@@ -3,21 +3,30 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UiSwitchModule } from 'ngx-toggle-switch';
 
 const MODULES = [
   FormsModule,
   HttpModule,
   BrowserModule,
-  BrowserAnimationsModule
+  BrowserAnimationsModule,
+  UiSwitchModule
+];
+
+const COMPONENTS = [
+
 ];
 
 @NgModule({
   imports: [
     ...MODULES,
   ],
-  declarations: [],
+  declarations: [
+    ...COMPONENTS,
+  ],
   exports: [
     ...MODULES,
+    ...COMPONENTS,
   ]
 })
 export class SharedModule { }
