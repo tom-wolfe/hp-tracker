@@ -13,7 +13,34 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Lato:400,700,400italic"
   background-color: $success !important;
 }
 
+.navbar {
+  padding: 0.5rem 1rem !important;
+}
+
 // Buttons =====================================================================
+
+.btn-primary:not([disabled]):not(.disabled):active,
+.btn-primary:not([disabled]):not(.disabled).active,
+.btn-primary:focus, .btn-primary.focus,
+.show > .btn-primary.dropdown-toggle,
+.btn-secondary:not([disabled]):not(.disabled):active,
+.btn-secondary:not([disabled]):not(.disabled).active,
+.btn-secondary:focus, .btn-secondary.focus,
+.show > .btn-secondary.dropdown-toggle,
+.btn-success:not([disabled]):not(.disabled):active,
+.btn-success:not([disabled]):not(.disabled).active,
+.btn-success:focus, .btn-success.focus,
+.show > .btn-success.dropdown-toggle,
+.btn-danger:not([disabled]):not(.disabled):active,
+.btn-danger:not([disabled]):not(.disabled).active,
+.btn-danger:focus, .btn-danger.focus,
+.show > .btn-danger.dropdown-toggle
+.btn-info:not([disabled]):not(.disabled):active,
+.btn-info:not([disabled]):not(.disabled).active,
+.btn-info:focus, .btn-info.focus,
+.show > .btn-info.dropdown-toggle {
+  box-shadow: none !important;
+}
 
 // Typography ==================================================================
 
