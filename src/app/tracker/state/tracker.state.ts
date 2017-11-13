@@ -1,10 +1,7 @@
+import { HPState } from './hp/hp.state';
+import { KeypadState } from './keypad/keypad.state';
+
 export interface TrackerState {
   hp: HPState;
-}
-
-export interface HPState {
-  currentHp: number;
-  maxHp: number;
-  tempHp: number;
-  tempMaxHp: number;
+  keypad: KeypadState;
 }

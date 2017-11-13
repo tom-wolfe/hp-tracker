@@ -1,10 +1,10 @@
 import { TEMP_HP } from './hp.actions';
 import * as HPActions from './hp.actions';
-import { HPState } from './tracker.state';
+import { HPState } from './hp.state';
 
-const initialState: HPState = {
-  currentHp: 0,
-  maxHp: 0,
+export const initialState: HPState = {
+  currentHp: 30,
+  maxHp: 30,
   tempHp: 0,
   tempMaxHp: 0,
 };
@@ -33,6 +33,8 @@ export function hpReducer(state: HPState = initialState, action: HPActions.Actio
           newState.currentHp += newState.tempHp;
           newState.tempHp = 0;
         }
+      } else {
+        newState.currentHp = Math.max(0, newState.currentHp - action.amount);
       }
       return newState;
     }

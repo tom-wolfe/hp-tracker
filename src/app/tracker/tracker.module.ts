@@ -4,7 +4,8 @@ import { localStorageSync } from 'ngrx-store-localstorage';
 
 import { SharedModule } from '../shared/shared.module';
 import { KeypadComponent } from './keypad';
-import { hpReducer } from './state/hp.reducer';
+import { hpReducer } from './state/hp';
+import { keypadReducer } from './state/keypad';
 import { TrackerRoutingModule } from './tracker-routing.module';
 import { TrackerComponent } from './tracker.component';
 
@@ -18,6 +19,11 @@ const COMPONENTS = [
   KeypadComponent
 ];
 
+const reducers = {
+  hp: hpReducer,
+  keypad: keypadReducer
+};
+
 @NgModule({
   declarations: [
     ...COMPONENTS
@@ -25,7 +31,7 @@ const COMPONENTS = [
   imports: [
     SharedModule,
     TrackerRoutingModule,
-    StoreModule.forFeature('tracker', { hp: hpReducer }, { metaReducers }),
+    StoreModule.forFeature('tracker', reducers, { metaReducers }),
   ],
   providers: []
 })

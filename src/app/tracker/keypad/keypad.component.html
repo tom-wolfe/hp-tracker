@@ -1,46 +1,22 @@
 <div class="keypad">
   <div class="display">
     <div class="value">
-      130
+      {{keypad.value}}
     </div>
-    <button class="btn btn-secondary clear"><i class="fa fa-times"></i></button>
+    <button class="btn btn-secondary clear" (click)="pressClear()"><i class="fa fa-times"></i></button>
   </div>
   <div class="numbers">
     <div class="key">
-      <button class="btn btn-success">Heal</button>
+      <button class="btn btn-success" (click)="pressHeal()">Heal</button>
     </div>
     <div class="key">
-      <button class="btn btn-primary">0</button>
+      <button class="btn btn-primary" (click)="pressNum(0)">0</button>
     </div>
     <div class="key">
-      <button class="btn btn-danger">Hurt</button>
+      <button class="btn btn-danger" (click)="pressHurt()">Hurt</button>
     </div>
-    <div class="key">
-      <button class="btn btn-primary">1</button>
-    </div>
-    <div class="key">
-      <button class="btn btn-primary">2</button>
-    </div>
-    <div class="key">
-      <button class="btn btn-primary">3</button>
-    </div>
-    <div class="key">
-      <button class="btn btn-primary">4</button>
-    </div>
-    <div class="key">
-      <button class="btn btn-primary">5</button>
-    </div>
-    <div class="key">
-      <button class="btn btn-primary">6</button>
-    </div>
-    <div class="key">
-      <button class="btn btn-primary">7</button>
-    </div>
-    <div class="key">
-      <button class="btn btn-primary">8</button>
-    </div>
-    <div class="key">
-      <button class="btn btn-primary">9</button>
+    <div class="key" *ngFor="let n of buttons">
+      <button class="btn btn-primary" (click)="pressNum(n)">{{n}}</button>
     </div>
   </div>
 </div>
