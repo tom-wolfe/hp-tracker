@@ -1,3 +1,4 @@
+import { MaxHPModalComponent } from './max-hp-modal/max-hp-modal.component';
 import { NgModule } from '@angular/core';
 import { ActionReducer, MetaReducer, StoreModule } from '@ngrx/store';
 import { localStorageSync } from 'ngrx-store-localstorage';
@@ -16,7 +17,8 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
 
 const COMPONENTS = [
   TrackerComponent,
-  KeypadComponent
+  KeypadComponent,
+  MaxHPModalComponent
 ];
 
 const reducers = {
