@@ -4,7 +4,7 @@ import { SharedState } from './app.state';
 import * as SharedActions from './shared.actions';
 
 const initialState: SharedState = {
-  title: 'HP Tracker'
+  title: 'HitPoints'
 };
 
 export function sharedReducer(state: SharedState = initialState, action: SharedActions.Action): SharedState {

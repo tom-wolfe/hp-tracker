@@ -7,6 +7,21 @@
 $web-font-path: "https://fonts.googleapis.com/css?family=Lato:400,700,400italic" !default;
 @import url($web-font-path);
 
+// Body ========================================================================
+
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+.global-wrapper {
+  background: $gray-900;
+  height: 100%;
+}
+
 // Navbar ======================================================================
 
 .bg-dark {
