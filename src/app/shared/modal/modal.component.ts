@@ -7,13 +7,23 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./modal.component.scss'],
   animations: [
     trigger('flyInOut', [
-      state('in', style({ opacity: 1, transform: 'translateY(0)' })),
+      state('in', style({ transform: 'translateY(0)' })),
       transition('void => *', [
-        style({ opacity: 0, transform: 'translateY(-100%)' }),
+        style({ transform: 'translateY(-100%)' }),
         animate(300)
       ]),
       transition('* => void', [
-        animate(300, style({ opacity: 0, transform: 'translateY(-100%)' }))
+        animate(300, style({ transform: 'translateY(-100%)' }))
+      ])
+    ]),
+    trigger('fadeInOut', [
+      state('in', style({ opacity: 1 })),
+      transition('void => *', [
+        style({ opacity: 0 }),
+        animate(100)
+      ]),
+      transition('* => void', [
+        animate(100, style({ opacity: 0 }))
       ])
     ])
   ]
