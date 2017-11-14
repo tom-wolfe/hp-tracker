@@ -13,7 +13,7 @@ import * as Modals from '../../state/modals';
 export class TempMaxHPModalComponent {
   value: number;
   show: boolean;
-  
+
   @ViewChild('input') input: ElementRef;
 
   constructor(private store: Store<AppState>) {
