@@ -1,0 +1,22 @@
+{
+  "short_name": "HitPoints",
+  "name": "HitPoints",
+  "icons": [
+    {
+      "src": "assets/icons/48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "assets/icons/96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "assets/icons/192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "index.html"
+}
