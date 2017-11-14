@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 
 import { AppState } from './state';
 import { CharacterState } from './tracker/state/character';
-import { SetConcentrating } from './tracker/state/character/concentrating';
+import { SetConcentrating } from './tracker/state/character/concentration';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +20,6 @@ export class AppComponent {
   }
 
   toggleConcentrating(checked: boolean) {
-    console.log('face');
     this.store.dispatch(new SetConcentrating(checked));
   }
 }

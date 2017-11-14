@@ -34,36 +34,52 @@ describe('modalsReducer', () => {
         expect(result[k]).toEqual(k === 'maxHP');
       });
     });
-    describe('show temp hp action', () => {
-      it('should show temp HP modal', () => {
-        const action = new Modals.ShowTemporaryHP();
-        const state: Modals.ModalsState = Modals.initialState;
-        const result = Modals.modalsReducer(state, action);
-        expect(result.tempHP).toEqual(true);
-      });
-      it('should show only temp HP modal', () => {
-        const action = new Modals.ShowTemporaryHP();
-        const state: Modals.ModalsState = Modals.initialState;
-        const result = Modals.modalsReducer(state, action);
-        Object.keys(result).forEach(k => {
-          expect(result[k]).toEqual(k === 'tempHP');
-        });
+  });
+  describe('show temp hp action', () => {
+    it('should show temp HP modal', () => {
+      const action = new Modals.ShowTemporaryHP();
+      const state: Modals.ModalsState = Modals.initialState;
+      const result = Modals.modalsReducer(state, action);
+      expect(result.tempHP).toEqual(true);
+    });
+    it('should show only temp HP modal', () => {
+      const action = new Modals.ShowTemporaryHP();
+      const state: Modals.ModalsState = Modals.initialState;
+      const result = Modals.modalsReducer(state, action);
+      Object.keys(result).forEach(k => {
+        expect(result[k]).toEqual(k === 'tempHP');
       });
     });
-    describe('show temp max hp action', () => {
-      it('should show temp max HP modal', () => {
-        const action = new Modals.ShowTemporaryMaxHP();
-        const state: Modals.ModalsState = Modals.initialState;
-        const result = Modals.modalsReducer(state, action);
-        expect(result.tempMaxHP).toEqual(true);
+  });
+  describe('show temp max hp action', () => {
+    it('should show temp max HP modal', () => {
+      const action = new Modals.ShowTemporaryMaxHP();
+      const state: Modals.ModalsState = Modals.initialState;
+      const result = Modals.modalsReducer(state, action);
+      expect(result.tempMaxHP).toEqual(true);
+    });
+    it('should show only temp max HP modal', () => {
+      const action = new Modals.ShowTemporaryMaxHP();
+      const state: Modals.ModalsState = Modals.initialState;
+      const result = Modals.modalsReducer(state, action);
+      Object.keys(result).forEach(k => {
+        expect(result[k]).toEqual(k === 'tempMaxHP');
       });
-      it('should show only temp max HP modal', () => {
-        const action = new Modals.ShowTemporaryMaxHP();
-        const state: Modals.ModalsState = Modals.initialState;
-        const result = Modals.modalsReducer(state, action);
-        Object.keys(result).forEach(k => {
-          expect(result[k]).toEqual(k === 'tempMaxHP');
-        });
+    });
+  });
+  describe('show concentration action', () => {
+    it('should show concentration modal', () => {
+      const action = new Modals.ShowConcentration();
+      const state: Modals.ModalsState = Modals.initialState;
+      const result = Modals.modalsReducer(state, action);
+      expect(result.concentration).toEqual(true);
+    });
+    it('should show only concentration modal', () => {
+      const action = new Modals.ShowConcentration();
+      const state: Modals.ModalsState = Modals.initialState;
+      const result = Modals.modalsReducer(state, action);
+      Object.keys(result).forEach(k => {
+        expect(result[k]).toEqual(k === 'concentration');
       });
     });
   });

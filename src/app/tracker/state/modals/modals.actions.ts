@@ -5,6 +5,7 @@ export const SHOW_MAX_HP = '[Modals] Show Max HP';
 export const SHOW_TEMP_HP = '[Modals] Show Temporary HP';
 export const SHOW_TEMP_MAX_HP = '[Modals] Show Temporary Max HP';
 export const SHOW_NAME = '[Modals] Show Name';
+export const SHOW_CONCENTRATION = '[Modals] Show Concentration';
 
 export class CloseAll implements Action {
   readonly type = CLOSE_ALL;
@@ -31,4 +32,9 @@ export class ShowName implements Action {
   constructor() { }
 }
 
-export type Action = CloseAll | ShowMaxHP | ShowTemporaryHP | ShowTemporaryMaxHP | ShowName;
+export class ShowConcentration implements Action {
+  readonly type = SHOW_CONCENTRATION;
+  constructor() { }
+}
+
+export type Action = CloseAll | ShowMaxHP | ShowTemporaryHP | ShowTemporaryMaxHP | ShowName | ShowConcentration;

@@ -3,4 +3,5 @@ export interface ModalsState {
   tempHP: boolean;
   tempMaxHP: boolean;
   name: boolean;
+  concentration: boolean;
 }

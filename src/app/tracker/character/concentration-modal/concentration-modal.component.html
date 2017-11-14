@@ -1,0 +1,15 @@
+<app-modal [show]="show">
+  <div class="modal-body">
+    <h3>Concentration Check!</h3>
+    <div>You took damage while holding concentration.
+      <br />Make a constitution saving throw!*</div>
+    <div class="dc">
+      DC{{dc}}
+    </div>
+  </div>
+  <div class="modal-footer">
+    <small class="footnote">* With advantage if you have the War Caster feat.</small>
+    <button type="button" class="btn btn-lg btn-success" (click)="pass()">Passed</button>
+    <button type="button" class="btn btn-lg btn-danger" (click)="fail()">Failed</button>
+  </div>
+</app-modal>

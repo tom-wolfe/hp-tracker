@@ -5,7 +5,7 @@ describe('nameReducer', () => {
     it('should return the default state', () => {
       const action = {} as any;
       const result = Name.nameReducer(undefined, action);
-      expect(result).toEqual('Paladin');
+      expect(result).toEqual(undefined);
     });
   });
 
