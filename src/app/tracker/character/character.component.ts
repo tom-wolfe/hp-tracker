@@ -24,7 +24,7 @@ export class CharacterComponent {
     };
   }
 
-  getHpColor(p) {
+  private getHpColor(p) {
     if (p > 50) { return '#00bc8c'; }
     if (p > 25) { return '#f39c12'; }
     return '#e12e1c';
