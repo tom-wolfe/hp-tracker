@@ -36,8 +36,4 @@ export class ModalComponent {
   @Input() show = false;
 
   constructor() { }
-
-  close() {
-    this.show = false;
-  }
 }

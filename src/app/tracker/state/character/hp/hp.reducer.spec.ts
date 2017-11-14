@@ -129,5 +129,40 @@ describe('hpReducer', () => {
       expect(result.max).toEqual(40);
       expect(result.current).toEqual(50);
     });
+    it('should cast to number', () => {
+      const action = new HP.SetMax(<any>'40');
+      const state: HP.HPState = {
+        current: 50,
+        max: 50,
+        temp: 0,
+        tempMax: 0
+      };
+      const result = HP.hpReducer(state, action);
+      expect(result.max).toEqual(40);
+    });
+  });
+  describe('set temp action', () => {
+    it('should set temporary HP', () => {
+      const action = new HP.SetTemporaryHP(15);
+      const state: HP.HPState = {
+        current: 25,
+        max: 25,
+        temp: 0,
+        tempMax: 0
+      };
+      const result = HP.hpReducer(state, action);
+      expect(result.temp).toEqual(15);
+    });
+    it('should cast to number', () => {
+      const action = new HP.SetTemporaryHP(<any>'40');
+      const state: HP.HPState = {
+        current: 50,
+        max: 50,
+        temp: 0,
+        tempMax: 0
+      };
+      const result = HP.hpReducer(state, action);
+      expect(result.temp).toEqual(40);
+    });
   });
 });

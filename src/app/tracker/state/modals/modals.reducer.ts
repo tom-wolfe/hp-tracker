@@ -4,7 +4,8 @@ import * as ModalsActions from './modals.actions';
 import { ModalsState } from './modals.state';
 
 export const initialState: ModalsState = {
-  maxHP: false
+  maxHP: false,
+  tempHP: false
 };
 
 export function modalsReducer(state: ModalsState = initialState, action: ModalsActions.Action): ModalsState {
@@ -14,6 +15,9 @@ export function modalsReducer(state: ModalsState = initialState, action: ModalsA
     }
     case ModalsActions.SHOW_MAX_HP: {
       return merge({}, initialState, { maxHP: true });
+    }
+    case ModalsActions.SHOW_TEMP_HP: {
+      return merge({}, initialState, { tempHP: true });
     }
     default: {
       return state;

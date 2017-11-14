@@ -12,7 +12,7 @@ export const initialState: HPState = {
 export function hpReducer(state: HPState = initialState, action: HPActions.Action): HPState {
   switch (action.type) {
     case HPActions.SET_MAX: {
-      const newState = merge({}, state, { max: action.max });
+      const newState = merge({}, state, { max: Number(action.max) });
       const max = newState.max + newState.tempMax;
       if (newState.current > max) {
         newState.current = max;
@@ -20,10 +20,10 @@ export function hpReducer(state: HPState = initialState, action: HPActions.Actio
       return newState;
     }
     case HPActions.TEMP_HP: {
-      return merge({}, state, { max: action.amount });
+      return merge({}, state, { temp: Number(action.amount) });
     }
     case HPActions.TEMP_MAX_HP: {
-      return merge({}, state, { tempMax: action.amount });
+      return merge({}, state, { tempMax: Number(action.amount) });
     }
     case HPActions.HEAL: {
       return merge({}, state, {

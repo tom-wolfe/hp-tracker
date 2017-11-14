@@ -1,4 +1,4 @@
-<app-modal [show]="show" #modal>
+<app-modal [show]="show">
   <div class="modal-body">
     <div class="form-group row">
       <label for="maxHP" class="col-sm-3 col-form-label col-form-label-lg">Max HP</label>
@@ -9,6 +9,6 @@
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-lg btn-primary" (click)="setMaxHP()">Set Max</button>
-    <app-modal-close-footer (click)="modal.close()"></app-modal-close-footer>
+    <app-modal-close-footer (click)="close()"></app-modal-close-footer>
   </div>
 </app-modal>

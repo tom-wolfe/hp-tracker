@@ -34,5 +34,21 @@ describe('hpReducer', () => {
         expect(result[k]).toEqual(k === 'maxHP');
       });
     });
+    describe('show temp hp action', () => {
+      it('should show temp HP modal', () => {
+        const action = new Modals.ShowTemporaryHP();
+        const state: Modals.ModalsState = Modals.initialState;
+        const result = Modals.modalsReducer(state, action);
+        expect(result.tempHP).toEqual(true);
+      });
+      it('should show only temp HP modal', () => {
+        const action = new Modals.ShowTemporaryHP();
+        const state: Modals.ModalsState = Modals.initialState;
+        const result = Modals.modalsReducer(state, action);
+        Object.keys(result).forEach(k => {
+          expect(result[k]).toEqual(k === 'tempHP');
+        });
+      });
+    });
   });
 });

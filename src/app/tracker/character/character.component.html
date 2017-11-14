@@ -11,8 +11,10 @@
   </div>
   <div class="card hp-display">
     <div class="card-body">
-      <p class="card-text">{{character.hp.temp}}</p>
+      <p class="card-text"><span class="clickable" (click)="showTempHP()">{{character.hp.temp}}</span></p>
     </div>
     <div class="card-footer">Temporary Hit Points</div>
   </div>
+  <app-max-hp-modal></app-max-hp-modal>
+  <app-temp-hp-modal></app-temp-hp-modal>
 </div>
