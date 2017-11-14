@@ -1,44 +1,45 @@
 import * as HPActions from './hp.actions';
 import { HPState } from './hp.state';
+import { merge } from 'lodash';
 
 export const initialState: HPState = {
-  currentHp: 30,
-  maxHp: 30,
-  tempHp: 0,
-  tempMaxHp: 0,
+  current: 30,
+  max: 30,
+  temp: 0,
+  tempMax: 0,
 };
 
 export function hpReducer(state: HPState = initialState, action: HPActions.Action): HPState {
   switch (action.type) {
     case HPActions.SET_MAX: {
-      const newState = Object.assign({}, state, { maxHp: action.max });
-      const maxHp = newState.maxHp + newState.tempMaxHp;
-      if (newState.currentHp > maxHp) {
-        newState.currentHp = maxHp;
+      const newState = merge({}, state, { max: action.max });
+      const max = newState.max + newState.tempMax;
+      if (newState.current > max) {
+        newState.current = max;
       }
       return newState;
     }
     case HPActions.TEMP_HP: {
-      return Object.assign({}, state, { maxHp: action.amount });
+      return merge({}, state, { max: action.amount });
     }
     case HPActions.TEMP_MAX_HP: {
-      return Object.assign({}, state, { tempMaxHp: action.amount });
+      return merge({}, state, { tempMax: action.amount });
     }
     case HPActions.HEAL: {
-      return Object.assign({}, state, {
-        currentHp: Math.min(state.maxHp + state.tempMaxHp, state.currentHp + action.amount)
+      return merge({}, state, {
+        current: Math.min(state.max + state.tempMax, state.current + action.amount)
       });
     }
     case HPActions.HURT: {
-      const newState = Object.assign({}, state);
-      if (newState.tempHp > 0) {
-        newState.tempHp -= action.amount;
-        if (newState.tempHp < 0) {
-          newState.currentHp += newState.tempHp;
-          newState.tempHp = 0;
+      const newState = merge({}, state);
+      if (newState.temp > 0) {
+        newState.temp -= action.amount;
+        if (newState.temp < 0) {
+          newState.current += newState.temp;
+          newState.temp = 0;
         }
       } else {
-        newState.currentHp = Math.max(0, newState.currentHp - action.amount);
+        newState.current = Math.max(0, newState.current - action.amount);
       }
       return newState;
     }

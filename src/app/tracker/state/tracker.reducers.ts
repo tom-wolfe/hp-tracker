@@ -3,6 +3,7 @@ import { localStorageSync } from 'ngrx-store-localstorage';
 
 import { characterReducer } from './character';
 import { keypadReducer } from './keypad';
+import { modalsReducer } from './modals';
 
 function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({ keys: ['character'], rehydrate: true })(reducer);
@@ -12,5 +13,6 @@ export const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReduc
 
 export const reducers = {
   character: characterReducer,
-  keypad: keypadReducer
+  keypad: keypadReducer,
+  modals: modalsReducer
 };

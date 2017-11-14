@@ -1,6 +1,6 @@
 export interface HPState {
-  currentHp: number;
-  maxHp: number;
-  tempHp: number;
-  tempMaxHp: number;
+  current: number;
+  max: number;
+  temp: number;
+  tempMax: number;
 }

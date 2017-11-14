@@ -33,7 +33,7 @@ export class ModalComponent {
     return 'modal-wrapper' + (this.show ? ' show' : '');
   }
 
-  @Input() show = true;
+  @Input() show = false;
 
   constructor() { }
 

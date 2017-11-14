@@ -1,14 +1,14 @@
-<app-modal #modal>
+<app-modal [show]="show" #modal>
   <div class="modal-body">
     <div class="form-group row">
       <label for="maxHP" class="col-sm-3 col-form-label col-form-label-lg">Max HP</label>
       <div class="col-sm-9">
-        <input type="email" class="form-control form-control-lg" id="maxHP" placeholder="30">
+        <input type="email" class="form-control form-control-lg" id="maxHP" placeholder="30" [(ngModel)]="value" (keydown.enter)="setMaxHP()">
       </div>
     </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-lg btn-primary">Set Max</button>
+    <button type="button" class="btn btn-lg btn-primary" (click)="setMaxHP()">Set Max</button>
     <app-modal-close-footer (click)="modal.close()"></app-modal-close-footer>
   </div>
 </app-modal>

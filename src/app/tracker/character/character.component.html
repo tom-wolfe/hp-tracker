@@ -1,0 +1,18 @@
+<div class="character">
+  <h2>{{character.name}}</h2>
+  <div class="card hp-display">
+    <div class="card-body">
+      <p class="card-text"><span class="clickable">{{character.hp.current}}</span> /
+        <span class="clickable" (click)="showMaxHP()">{{character.hp.max}}</span>
+        <sup class="clickable">(+ {{character.hp.tempMax}})</sup>
+      </p>
+    </div>
+    <div class="card-footer">Hit Points</div>
+  </div>
+  <div class="card hp-display">
+    <div class="card-body">
+      <p class="card-text">{{character.hp.temp}}</p>
+    </div>
+    <div class="card-footer">Temporary Hit Points</div>
+  </div>
+</div>

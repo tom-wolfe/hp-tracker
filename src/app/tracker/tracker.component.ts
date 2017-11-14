@@ -10,10 +10,10 @@ import { CharacterState } from './state/character';
   styleUrls: ['./tracker.component.scss']
 })
 export class TrackerComponent implements OnInit {
-  character: CharacterState;
+  currentCharacter: CharacterState;
 
   constructor(private store: Store<AppState>) {
-    store.select(s => s.tracker.character).subscribe(c => this.character = c);
+    store.select(s => s.tracker.character).subscribe(c => this.currentCharacter = c);
   }
 
   ngOnInit() { }

@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
-import { ActionReducer, MetaReducer, StoreModule } from '@ngrx/store';
-import { localStorageSync } from 'ngrx-store-localstorage';
+import { StoreModule } from '@ngrx/store';
 
 import { SharedModule } from '../shared/shared.module';
+import { CharacterComponent } from './character/character.component';
 import { KeypadComponent } from './keypad';
 import { MaxHPModalComponent } from './max-hp-modal/max-hp-modal.component';
-import { reducers, metaReducers } from './state';
+import { metaReducers, reducers } from './state';
 import { TrackerRoutingModule } from './tracker-routing.module';
 import { TrackerComponent } from './tracker.component';
 
 const COMPONENTS = [
   TrackerComponent,
+  CharacterComponent,
   KeypadComponent,
   MaxHPModalComponent
 ];

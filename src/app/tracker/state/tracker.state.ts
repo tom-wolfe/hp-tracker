@@ -1,7 +1,9 @@
-import { CharacterState } from './character/character.state';
-import { KeypadState } from './keypad/keypad.state';
+import { CharacterState } from './character';
+import { KeypadState } from './keypad';
+import { ModalsState } from './modals';
 
 export interface TrackerState {
   character: CharacterState;
   keypad: KeypadState;
+  modals: ModalsState;
 }
