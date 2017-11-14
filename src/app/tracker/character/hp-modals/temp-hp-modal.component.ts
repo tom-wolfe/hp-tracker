@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { ModalComponent } from '../../../shared/modal/modal.component';
@@ -13,7 +13,8 @@ import * as Modals from '../../state/modals';
 export class TempHPModalComponent {
   value: number;
   show: boolean;
-  @ViewChild('modal') modal: ModalComponent;
+
+  @ViewChild('input') input: ElementRef;
 
   constructor(private store: Store<AppState>) {
     this.store.select(s => s.tracker.modals.tempHP).subscribe(show => this.show = show);
@@ -27,5 +28,9 @@ export class TempHPModalComponent {
 
   close() {
     this.store.dispatch(new Modals.CloseAll());
+  }
+
+  onShown() {
+    setTimeout(() => { this.input.nativeElement.focus(); }, 1);
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { AppState } from '../../../state';
@@ -13,6 +13,8 @@ export class MaxHPModalComponent {
   value: number;
   show: boolean;
 
+  @ViewChild('input') input: ElementRef;
+
   constructor(private store: Store<AppState>) {
     this.store.select(s => s.tracker.modals.maxHP).subscribe(show => this.show = show);
     this.store.select(s => s.tracker.character.hp.max).subscribe(m => this.value = m);
@@ -25,5 +27,9 @@ export class MaxHPModalComponent {
 
   close() {
     this.store.dispatch(new Modals.CloseAll());
+  }
+
+  onShown() {
+    setTimeout(() => { this.input.nativeElement.focus(); }, 1);
   }
 }

@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
   selector: 'app-modal',
@@ -29,11 +29,27 @@ import { Component, Input } from '@angular/core';
   ]
 })
 export class ModalComponent {
+  private _show: boolean;
+
   get wrapperClasses(): string {
     return 'modal-wrapper' + (this.show ? ' show' : '');
   }
 
-  @Input() show = false;
+  @Input() get show(): boolean {
+    return this._show;
+  }
+
+  set show(value: boolean) {
+    if (value !== this._show) {
+      this._show = value;
+      if (value) {
+        this.shown.emit();
+      }
+    }
+  }
+
+  @Output() shown: EventEmitter<any> = new EventEmitter<any>();
+  @Output() clickAway: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 }

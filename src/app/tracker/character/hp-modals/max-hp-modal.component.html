@@ -1,9 +1,9 @@
-<app-modal [show]="show">
+<app-modal [show]="show" (shown)="onShown()">
   <div class="modal-body">
     <div class="form-group row">
       <label for="maxHP" class="col-sm-3 col-form-label col-form-label-lg">Max HP</label>
       <div class="col-sm-9">
-        <input type="number" pattern="\d*" class="form-control form-control-lg" id="maxHP" placeholder="30" [(ngModel)]="value" (keydown.enter)="setMaxHP()">
+        <input #input type="number" pattern="\d*" class="form-control form-control-lg" id="maxHP" placeholder="30" [(ngModel)]="value" (keydown.enter)="setMaxHP()">
       </div>
     </div>
   </div>
