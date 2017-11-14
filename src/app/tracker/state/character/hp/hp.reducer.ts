@@ -1,9 +1,7 @@
-import { TEMP_HP } from './hp.actions';
 import * as HPActions from './hp.actions';
 import { HPState } from './hp.state';
 
 export const initialState: HPState = {
-  character: 'Paladin',
   currentHp: 30,
   maxHp: 30,
   tempHp: 0,

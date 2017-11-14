@@ -1,12 +1,14 @@
-<app-modal>
+<app-modal #modal>
   <div class="modal-body">
-    <div class="form-group">
-      <label for="maxHp">Email address</label>
-      <input type="email" class="form-control" id="maxHp" aria-describedby="emailHelp" placeholder="Max HP">
+    <div class="form-group row">
+      <label for="maxHP" class="col-sm-3 col-form-label col-form-label-lg">Max HP</label>
+      <div class="col-sm-9">
+        <input type="email" class="form-control form-control-lg" id="maxHP" placeholder="30">
+      </div>
     </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-primary">Set Max</button>
-    <app-modal-close-footer></app-modal-close-footer>
+    <button type="button" class="btn btn-lg btn-primary">Set Max</button>
+    <app-modal-close-footer (click)="modal.close()"></app-modal-close-footer>
   </div>
 </app-modal>

@@ -1,5 +1,5 @@
 <div tabindex="-1" [class]="wrapperClasses" (click)="close()" *ngIf="show" [@fadeInOut]>
-  <div class="modal-dialog" role="document" [@flyInOut]>
+  <div class="modal-dialog" role="document" [@flyInOut] (click)="$event.stopPropagation()">
     <div class="modal-content">
       <ng-content select=".modal-header"></ng-content>
       <ng-content select=".modal-body"></ng-content>

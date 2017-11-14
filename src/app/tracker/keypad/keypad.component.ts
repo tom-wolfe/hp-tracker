@@ -2,7 +2,7 @@ import * as Keypad from '../state/keypad';
 import { AppState } from '../../state';
 import { Store } from '@ngrx/store';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import * as HP from '../state/hp';
+import * as HP from '../state/character/hp';
 
 @Component({
   selector: 'app-keypad',

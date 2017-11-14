@@ -1,7 +1,7 @@
-import { HPState } from './hp/hp.state';
+import { CharacterState } from './character/character.state';
 import { KeypadState } from './keypad/keypad.state';
 
 export interface TrackerState {
-  hp: HPState;
+  character: CharacterState;
   keypad: KeypadState;
 }

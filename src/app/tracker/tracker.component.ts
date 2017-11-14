@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { AppState } from '../state';
-import { HPState } from './state/hp';
+import { CharacterState } from './state/character';
 
 @Component({
   selector: 'app-tracker',
@@ -10,10 +10,10 @@ import { HPState } from './state/hp';
   styleUrls: ['./tracker.component.scss']
 })
 export class TrackerComponent implements OnInit {
-  hp: HPState;
+  character: CharacterState;
 
   constructor(private store: Store<AppState>) {
-    store.select(s => s.tracker.hp).subscribe(hp => this.hp = hp);
+    store.select(s => s.tracker.character).subscribe(c => this.character = c);
   }
 
   ngOnInit() { }

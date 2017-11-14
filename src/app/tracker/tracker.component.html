@@ -1,14 +1,14 @@
 <div class="tracker">
-  <h2>{{hp.character}}</h2>
+  <h2>{{character.name}}</h2>
   <div class="card hp-display">
     <div class="card-body">
-      <p class="card-text">{{hp.currentHp}} / {{hp.maxHp}} <sup>(+ {{hp.tempMaxHp}})</sup></p>
+      <p class="card-text">{{character.hp.currentHp}} / {{character.hp.maxHp}} <sup>(+ {{character.hp.tempMaxHp}})</sup></p>
     </div>
     <div class="card-footer">Hit Points</div>
   </div>
   <div class="card hp-display">
     <div class="card-body">
-      <p class="card-text">{{hp.tempHp}}</p>
+      <p class="card-text">{{character.hp.tempHp}}</p>
     </div>
     <div class="card-footer">Temporary Hit Points</div>
   </div>
