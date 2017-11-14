@@ -1,6 +1,6 @@
 import * as NameActions from './name.actions';
 
-export const initialState = 'Paladin';
+export const initialState: string = undefined;
 
 export function nameReducer(state: string = initialState, action: NameActions.Action): string {
   switch (action.type) {
