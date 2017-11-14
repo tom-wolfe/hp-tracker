@@ -1,4 +1,5 @@
-import { Action, ActionReducer, combineReducers, MetaReducer } from '@ngrx/store';
+import { Action, ActionReducer, MetaReducer } from '@ngrx/store';
+import { random } from 'lodash';
 import { localStorageSync } from 'ngrx-store-localstorage';
 
 import { characterReducer } from './character';
@@ -29,7 +30,7 @@ export function randomizeEmptyName(reducer: ActionReducer<TrackerState>): Action
   return function newReducer(state: TrackerState, action: Action) {
     const nextState = reducer(state, action);
     if (!nextState.character.name) {
-      nextState.character.name = RANDOM_NAMES[_.random(0, RANDOM_NAMES.length)];
+      nextState.character.name = RANDOM_NAMES[random(0, RANDOM_NAMES.length)];
     }
     return nextState;
   };
