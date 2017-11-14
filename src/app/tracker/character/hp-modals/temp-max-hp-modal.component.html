@@ -3,7 +3,7 @@
     <div class="form-group row">
       <label for="tempMaxHP" class="col-sm-3 col-form-label col-form-label-lg">Temp Max HP</label>
       <div class="col-sm-9">
-        <input type="number" class="form-control form-control-lg" id="tempMaxHP" placeholder="30" [(ngModel)]="value" (keydown.enter)="setTempMaxHP()">
+        <input type="number" pattern="\d*" class="form-control form-control-lg" id="tempMaxHP" placeholder="30" [(ngModel)]="value" (keydown.enter)="setTempMaxHP()">
       </div>
     </div>
   </div>
