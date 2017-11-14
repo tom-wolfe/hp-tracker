@@ -8,10 +8,12 @@ describe('hpReducer', () => {
       expect(result).toEqual(HP.initialState);
     });
   });
+
   describe('heal action', () => {
     it('should not heal over max', () => {
       const action = new HP.Heal(10);
       const state: HP.HPState = {
+        character: 'Paladin',
         currentHp: 45,
         maxHp: 50,
         tempHp: 0,
@@ -23,6 +25,7 @@ describe('hpReducer', () => {
     it('should not heal into temp', () => {
       const action = new HP.Heal(10);
       const state: HP.HPState = {
+        character: 'Paladin',
         currentHp: 45,
         maxHp: 50,
         tempHp: 5,
@@ -34,6 +37,7 @@ describe('hpReducer', () => {
     it('should heal into temp max', () => {
       const action = new HP.Heal(10);
       const state: HP.HPState = {
+        character: 'Paladin',
         currentHp: 45,
         maxHp: 50,
         tempHp: 0,
@@ -45,6 +49,7 @@ describe('hpReducer', () => {
     it('should not heal over temp max', () => {
       const action = new HP.Heal(20);
       const state: HP.HPState = {
+        character: 'Paladin',
         currentHp: 45,
         maxHp: 50,
         tempHp: 0,
@@ -58,6 +63,7 @@ describe('hpReducer', () => {
     it('should not hurt below min', () => {
       const action = new HP.Hurt(50);
       const state: HP.HPState = {
+        character: 'Paladin',
         currentHp: 25,
         maxHp: 50,
         tempHp: 0,
@@ -69,6 +75,7 @@ describe('hpReducer', () => {
     it('should hurt temp hp first', () => {
       const action = new HP.Hurt(10);
       const state: HP.HPState = {
+        character: 'Paladin',
         currentHp: 25,
         maxHp: 50,
         tempHp: 10,
@@ -81,6 +88,7 @@ describe('hpReducer', () => {
     it('should carry hurt over after temp hp', () => {
       const action = new HP.Hurt(20);
       const state: HP.HPState = {
+        character: 'Paladin',
         currentHp: 25,
         maxHp: 50,
         tempHp: 10,
