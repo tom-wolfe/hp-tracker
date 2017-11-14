@@ -50,5 +50,21 @@ describe('hpReducer', () => {
         });
       });
     });
+    describe('show temp max hp action', () => {
+      it('should show temp max HP modal', () => {
+        const action = new Modals.ShowTemporaryMaxHP();
+        const state: Modals.ModalsState = Modals.initialState;
+        const result = Modals.modalsReducer(state, action);
+        expect(result.tempMaxHP).toEqual(true);
+      });
+      it('should show only temp max HP modal', () => {
+        const action = new Modals.ShowTemporaryMaxHP();
+        const state: Modals.ModalsState = Modals.initialState;
+        const result = Modals.modalsReducer(state, action);
+        Object.keys(result).forEach(k => {
+          expect(result[k]).toEqual(k === 'tempMaxHP');
+        });
+      });
+    });
   });
 });

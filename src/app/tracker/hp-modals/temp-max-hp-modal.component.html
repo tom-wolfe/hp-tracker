@@ -1,0 +1,14 @@
+<app-modal [show]="show">
+  <div class="modal-body">
+    <div class="form-group row">
+      <label for="maxHP" class="col-sm-3 col-form-label col-form-label-lg">Temp Max HP</label>
+      <div class="col-sm-9">
+        <input type="email" class="form-control form-control-lg" id="maxHP" placeholder="30" [(ngModel)]="value" (keydown.enter)="setTempMaxHP()">
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-lg btn-primary" (click)="setTempHP()">Set Temp Max HP</button>
+    <app-modal-close-footer (click)="close()"></app-modal-close-footer>
+  </div>
+</app-modal>
