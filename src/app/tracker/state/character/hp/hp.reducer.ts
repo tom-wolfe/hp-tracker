@@ -11,7 +11,12 @@ export const initialState: HPState = {
 export function hpReducer(state: HPState = initialState, action: HPActions.Action): HPState {
   switch (action.type) {
     case HPActions.SET_MAX: {
-      return Object.assign({}, state, { maxHp: action.max });
+      const newState = Object.assign({}, state, { maxHp: action.max });
+      const maxHp = newState.maxHp + newState.tempMaxHp;
+      if (newState.currentHp > maxHp) {
+        newState.currentHp = maxHp;
+      }
+      return newState;
     }
     case HPActions.TEMP_HP: {
       return Object.assign({}, state, { maxHp: action.amount });

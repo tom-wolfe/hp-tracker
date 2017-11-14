@@ -92,4 +92,42 @@ describe('hpReducer', () => {
       expect(result.tempHp).toEqual(0);
     });
   });
+  describe('set max action', () => {
+    it('should set maximum HP and not raise current', () => {
+      const action = new HP.SetMax(50);
+      const state: HP.HPState = {
+        currentHp: 25,
+        maxHp: 25,
+        tempHp: 0,
+        tempMaxHp: 0
+      };
+      const result = HP.hpReducer(state, action);
+      expect(result.maxHp).toEqual(50);
+      expect(result.currentHp).toEqual(25);
+    });
+    it('should set maximum HP and lower current', () => {
+      const action = new HP.SetMax(40);
+      const state: HP.HPState = {
+        currentHp: 50,
+        maxHp: 50,
+        tempHp: 0,
+        tempMaxHp: 0
+      };
+      const result = HP.hpReducer(state, action);
+      expect(result.maxHp).toEqual(40);
+      expect(result.currentHp).toEqual(40);
+    });
+    it('should set maximum HP and lower current down to temp', () => {
+      const action = new HP.SetMax(40);
+      const state: HP.HPState = {
+        currentHp: 60,
+        maxHp: 50,
+        tempHp: 0,
+        tempMaxHp: 10
+      };
+      const result = HP.hpReducer(state, action);
+      expect(result.maxHp).toEqual(40);
+      expect(result.currentHp).toEqual(50);
+    });
+  });
 });
