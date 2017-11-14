@@ -20,7 +20,7 @@ export class TempMaxHPModalComponent {
     this.store.select(s => s.tracker.character.hp.tempMax).subscribe(m => this.value = m);
   }
 
-  setTempHP() {
+  setTempMaxHP() {
     this.store.dispatch(new HP.SetTemporaryMaxHP(this.value));
     this.close();
   }

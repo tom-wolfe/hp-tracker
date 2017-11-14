@@ -1,11 +1,12 @@
-import { ActionReducer, MetaReducer } from '@ngrx/store';
+import { Action, ActionReducer, combineReducers, MetaReducer } from '@ngrx/store';
 import { localStorageSync } from 'ngrx-store-localstorage';
 
 import { characterReducer } from './character';
 import { keypadReducer } from './keypad';
 import { modalsReducer } from './modals';
+import { TrackerState } from './tracker.state';
 
-function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
+export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({ keys: ['character'], rehydrate: true })(reducer);
 }
 
