@@ -1,17 +1,15 @@
 import { Component, Input, Output, EventEmitter, HostListener, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
-const UI_SWITCH_CONTROL_VALUE_ACCESSOR: any = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => ToggleComponent),
-  multi: true
-};
-
 @Component({
   selector: 'app-toggle',
   templateUrl: './toggle.component.html',
   styleUrls: ['./toggle.components.scss'],
-  providers: [UI_SWITCH_CONTROL_VALUE_ACCESSOR]
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => ToggleComponent),
+    multi: true
+  }]
 })
 export class ToggleComponent implements ControlValueAccessor {
   private _checked: boolean;
