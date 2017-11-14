@@ -15,6 +15,21 @@ export class CharacterComponent {
 
   constructor(private store: Store<AppState>) { }
 
+  get hpBarStyle(): {} {
+    const hp = this.character.hp;
+    const p = hp.current / (hp.max + hp.tempMax) * 100;
+    return {
+      width: `${p}%`,
+      'background-color': this.getHpColor(p);
+    };
+  }
+
+  getHpColor(p) {
+    if (p > 50) { return '#00bc8c'; }
+    if (p > 25) { return '#f39c12'; }
+    return '#e12e1c';
+  }
+
   showMaxHP() {
     this.store.dispatch(new Modals.ShowMaxHP());
   }

@@ -2,7 +2,6 @@
 
 .character {
   span.clickable {
-    // background-color: $gray-800;
     cursor: pointer;
     padding: 0.5rem 0.8rem;
   }
@@ -25,6 +24,13 @@
       background-color: $gray-700;
       border-color: $gray-800;
       font-size: 2em;
+    }
+    .hp-bar {
+      background: $gray-800;
+      .bar {
+        background: $green;
+        transition: width 0.5s ease-out, background-color 0.5s ease;
+      }
     }
     .card-footer {
       background: transparent;

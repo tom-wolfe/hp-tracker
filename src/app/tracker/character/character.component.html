@@ -7,6 +7,9 @@
         <sup class="clickable" (click)="showTempMaxHP()">(+ {{character.hp.tempMax}})</sup>
       </p>
     </div>
+    <div class="hp-bar">
+      <div class="bar" [ngStyle]="hpBarStyle">&nbsp;</div>
+    </div>
     <div class="card-footer">Hit Points</div>
   </div>
   <div class="card hp-display">
