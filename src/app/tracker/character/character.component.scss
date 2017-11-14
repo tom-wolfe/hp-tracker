@@ -1,14 +1,12 @@
 @import '~styles/_variables.scss';
 
 .character {
-  span.clickable {
+  .clickable {
     cursor: pointer;
-    padding: 0.5rem 0.8rem;
   }
-
-  sup.clickable {
-    cursor: pointer;
-    padding: none;
+  
+  span.clickable {
+    padding: 0.5rem 0.8rem;
   }
 
   .hp-display {

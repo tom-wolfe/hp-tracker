@@ -3,7 +3,8 @@ import { StoreModule } from '@ngrx/store';
 
 import { SharedModule } from '../shared/shared.module';
 import { CharacterComponent } from './character/character.component';
-import { MaxHPModalComponent, TempHPModalComponent, TempMaxHPModalComponent } from './hp-modals';
+import { NameModalComponent } from './character/name-modal/name-modal.component';
+import { MaxHPModalComponent, TempHPModalComponent, TempMaxHPModalComponent } from './character/hp-modals';
 import { KeypadComponent } from './keypad';
 import { metaReducers, reducers } from './state';
 import { TrackerRoutingModule } from './tracker-routing.module';
@@ -15,7 +16,8 @@ const COMPONENTS = [
   KeypadComponent,
   MaxHPModalComponent,
   TempHPModalComponent,
-  TempMaxHPModalComponent
+  TempMaxHPModalComponent,
+  NameModalComponent
 ];
 
 @NgModule({

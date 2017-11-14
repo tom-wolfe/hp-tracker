@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { AppState } from '../../state';
-import * as HP from '../state/character/hp';
-import * as Modals from '../state/modals';
+import { AppState } from '../../../state';
+import * as HP from '../../state/character/hp';
+import * as Modals from '../../state/modals';
 
 @Component({
   selector: 'app-max-hp-modal',

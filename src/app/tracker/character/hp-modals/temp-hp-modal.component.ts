@@ -1,10 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { ModalComponent } from '../../shared/modal/modal.component';
-import { AppState } from '../../state';
-import * as HP from '../state/character/hp';
-import * as Modals from '../state/modals';
+import { ModalComponent } from '../../../shared/modal/modal.component';
+import { AppState } from '../../../state';
+import * as HP from '../../state/character/hp';
+import * as Modals from '../../state/modals';
 
 @Component({
   selector: 'app-temp-hp-modal',

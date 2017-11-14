@@ -41,4 +41,8 @@ export class CharacterComponent {
   showTempMaxHP() {
     this.store.dispatch(new Modals.ShowTemporaryMaxHP());
   }
+
+  showName() {
+    this.store.dispatch(new Modals.ShowName());
+  }
 }

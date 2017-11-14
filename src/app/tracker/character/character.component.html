@@ -1,5 +1,5 @@
 <div class="character">
-  <h2>{{character.name}}</h2>
+  <h2 class="clickable" (click)="showName()">{{character.name}}</h2>
   <div class="card hp-display">
     <div class="card-body">
       <p class="card-text"><span class="clickable">{{character.hp.current}}</span> /
@@ -21,4 +21,5 @@
   <app-max-hp-modal></app-max-hp-modal>
   <app-temp-hp-modal></app-temp-hp-modal>
   <app-temp-max-hp-modal></app-temp-max-hp-modal>
+  <app-name-modal></app-name-modal>
 </div>
