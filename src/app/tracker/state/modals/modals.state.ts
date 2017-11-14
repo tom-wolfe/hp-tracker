@@ -4,4 +4,5 @@ export interface ModalsState {
   tempMaxHP: boolean;
   name: boolean;
   concentration: boolean;
+  unconscious: boolean;
 }

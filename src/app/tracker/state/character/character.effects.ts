@@ -22,7 +22,6 @@ export class CharacterEffects {
     .ofType<HP.Hurt>(HP.HURT)
     .withLatestFrom(this.store$.select(s => s.tracker.character))
     .mergeMap(([action, character]: [HP.Hurt, CharacterState], con: any) => {
-
       if (!character.concentration.concentrating) {
         return Observable.from([]);
       }
@@ -34,8 +33,7 @@ export class CharacterEffects {
       } else {
         return Observable.from([
           new Concentration.SetConcentrating(false),
-          // TODO: Make a new dialog telling them they're unconscious and lost concentration.
-          new Modals.ShowConcentration()
+          new Modals.ShowUnconscious()
         ]);
       }
     });

@@ -8,7 +8,8 @@ export const initialState: ModalsState = {
   tempHP: false,
   tempMaxHP: false,
   name: false,
-  concentration: false
+  concentration: false,
+  unconscious: false,
 };
 
 export function modalsReducer(state: ModalsState = initialState, action: ModalsActions.Action): ModalsState {
@@ -30,6 +31,9 @@ export function modalsReducer(state: ModalsState = initialState, action: ModalsA
     }
     case ModalsActions.SHOW_CONCENTRATION: {
       return merge({}, initialState, { concentration: true });
+    }
+    case ModalsActions.SHOW_UNCONSCIOUS: {
+      return merge({}, initialState, { unconscious: true });
     }
     default: {
       return state;

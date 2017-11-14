@@ -11,7 +11,6 @@ export const initialState: ConcentrationState = {
 export function concentrationReducer(state: ConcentrationState = initialState, action: ConcentrationActions.Action): ConcentrationState {
   switch (action.type) {
     case ConcentrationActions.SET_CONCENTRATING: {
-      console.log(action.concentrating);
       return merge({}, state, { concentrating: action.concentrating });
     }
     case ConcentrationActions.SET_SAVE_DC: {
