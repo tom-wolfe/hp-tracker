@@ -1,6 +1,6 @@
 import * as Keypad from './';
 
-describe('hpReducer', () => {
+describe('keypadReducer', () => {
   describe('undefined action', () => {
     it('should return the default state', () => {
       const action = {} as any;

@@ -1,6 +1,6 @@
 import * as Name from './';
 
-describe('hpReducer', () => {
+describe('nameReducer', () => {
   describe('undefined action', () => {
     it('should return the default state', () => {
       const action = {} as any;

@@ -20,7 +20,7 @@ export class CharacterComponent {
     const p = hp.current / (hp.max + hp.tempMax) * 100;
     return {
       width: `${p}%`,
-      'background-color': this.getHpColor(p);
+      'background-color': this.getHpColor(p)
     };
   }
 

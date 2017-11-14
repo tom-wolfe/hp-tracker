@@ -1,7 +1,7 @@
 import * as Modals from './';
 import { mapValues, values } from 'lodash';
 
-describe('hpReducer', () => {
+describe('modalsReducer', () => {
   describe('undefined action', () => {
     it('should return the default state', () => {
       const action = {} as any;

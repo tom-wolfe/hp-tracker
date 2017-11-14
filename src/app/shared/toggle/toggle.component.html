@@ -1,0 +1,9 @@
+<div class="toggle" [class.toggle-large]="size === 'large'" [class.toggle-medium]="size === 'medium'" [class.toggle-small]="size === 'small'">
+  <span class="switch" [class.on]="checked" [class.disabled]="disabled">
+    <input type="checkbox" id="enabled" name="enabled" [checked]="checked" style="display: none;" aria-invalid="false">
+    <div class="toggle-switch"></div>
+  </span>
+  <div class="label">
+    <ng-content></ng-content>
+  </div>
+</div>
