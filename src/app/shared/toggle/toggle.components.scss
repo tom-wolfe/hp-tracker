@@ -16,8 +16,8 @@
 }
 
 .toggle.toggle-small { @include size(30px, 18px); }
-.toggle.toggle-medium { @include size(50px, 30px); }
-.toggle.toggle-large { @include size(60px, 36px); }
+.toggle.toggle-medium { @include size(40px, 24px); }
+.toggle.toggle-large { @include size(50px, 30px); }
 
 .toggle.disabled {
   cursor: not-allowed;
