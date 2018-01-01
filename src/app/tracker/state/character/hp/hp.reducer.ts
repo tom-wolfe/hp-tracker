@@ -23,7 +23,11 @@ export function hpReducer(state: HPState = initialState, action: HPActions.Actio
       return merge({}, state, { temp: Number(action.amount) });
     }
     case HPActions.TEMP_MAX_HP: {
-      return merge({}, state, { tempMax: Number(action.amount) });
+      const tempMax = Number(action.amount);
+      return merge({}, state, {
+        tempMax,
+        current: Math.min(state.current, state.max + tempMax),
+      });
     }
     case HPActions.HEAL: {
       return merge({}, state, {
