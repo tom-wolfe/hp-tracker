@@ -10,7 +10,7 @@
   </div>
   <div class="navbar-characters" [hidden]="!showCharacterMenu">
     <div class="character" *ngFor="let character of characters; let i = index">
-      <div class="name" (click)="setCharacter(i)">{{character.name}}</div>
+      <div class="name" (click)="setCharacter(i)">{{character.name}} ({{character.hp.current}} / {{character.hp.max}})</div>
       <button class="btn btn-primary remove" (click)="removeCharacter(i)">
         <span class="fa fa-remove"></span>
       </button>
