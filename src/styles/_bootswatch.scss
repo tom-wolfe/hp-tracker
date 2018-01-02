@@ -32,7 +32,16 @@ body {
 }
 
 .navbar {
-  padding: 0.5rem 1rem !important;
+  padding: 0 !important;
+  .navbar-inner {
+    flex-grow: 1;
+    display: flex;
+    padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+    .navbar-brand {
+      flex-grow: 1;
+      padding: 0;
+    }
+  }
 }
 
 // Buttons =====================================================================
@@ -58,6 +67,10 @@ body {
 .btn-info:focus, .btn-info.focus,
 .show > .btn-info.dropdown-toggle {
   box-shadow: none !important;
+}
+
+.btn {
+  border: none !important;
 }
 
 // Typography ==================================================================

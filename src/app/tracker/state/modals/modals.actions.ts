@@ -7,6 +7,7 @@ export const SHOW_TEMP_MAX_HP = '[Modals] Show Temporary Max HP';
 export const SHOW_NAME = '[Modals] Show Name';
 export const SHOW_CONCENTRATION = '[Modals] Show Concentration';
 export const SHOW_UNCONSCIOUS = '[Modals] Show Unconscious';
+export const TOGGLE_CHARACTER_MENU = '[Modals] Toggle Character Menu'
 
 export class CloseAll implements Action {
   readonly type = CLOSE_ALL;
@@ -43,5 +44,10 @@ export class ShowUnconscious implements Action {
   constructor() { }
 }
 
+export class ToggleCharacterMenu implements Action {
+  readonly type = TOGGLE_CHARACTER_MENU;
+  constructor() { }
+}
 
-export type Action = CloseAll | ShowMaxHP | ShowTemporaryHP | ShowTemporaryMaxHP | ShowName | ShowConcentration | ShowUnconscious;
+export type Action = CloseAll | ShowMaxHP | ShowTemporaryHP | ShowTemporaryMaxHP | ShowName | ShowConcentration | ShowUnconscious |
+  ToggleCharacterMenu;

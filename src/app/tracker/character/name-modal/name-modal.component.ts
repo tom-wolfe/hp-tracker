@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { AppState } from '../../../state';
-import * as Name from '../../state/character/name';
+import * as Name from '../../state/characters/character/name';
+import { currentCharacter } from '../../state/characters/characters.selectors';
 import * as Modals from '../../state/modals';
 
 @Component({
@@ -15,7 +16,7 @@ export class NameModalComponent {
 
   constructor(private store: Store<AppState>) {
     this.store.select(s => s.tracker.modals.name).subscribe(show => this.show = show);
-    this.store.select(s => s.tracker.character.name).subscribe(n => this.value = n);
+    this.store.select(s => s.tracker).select(currentCharacter).subscribe(c => this.value = c.name);
   }
 
   setName() {

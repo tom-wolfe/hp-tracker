@@ -1,7 +1,21 @@
 <nav class="navbar navbar navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">{{title}}</a>
-  <div>
-    <app-toggle [checked]="character.concentration.concentrating" (change)="toggleConcentrating($event)">Concentrating</app-toggle>
+  <button class="navbar-toggler" type="button" (click)="toggleCharacterMenu()">
+    <span class="fa fa-bars"></span>
+  </button>
+  <div class="navbar-inner">
+    <a class="navbar-brand" href="#">{{title}}</a>
+    <div>
+      <app-toggle [checked]="character.concentration.concentrating" (change)="toggleConcentrating($event)">Concentrating</app-toggle>
+    </div>
+  </div>
+  <div class="navbar-characters" [hidden]="!showCharacterMenu">
+    <div class="character" *ngFor="let character of characters; let i = index">
+      <div class="name" (click)="setCharacter(i)">{{character.name}}</div>
+      <button class="btn btn-primary remove" (click)="removeCharacter(i)">
+        <span class="fa fa-remove"></span>
+      </button>
+    </div>
+    <div class="new-character" (click)="newCharacter()">New Character</div>
   </div>
 </nav>
 <div class="container-fluid">

@@ -5,4 +5,5 @@ export interface ModalsState {
   name: boolean;
   concentration: boolean;
   unconscious: boolean;
+  characterMenu: boolean;
 }

@@ -3,6 +3,29 @@
   flex-direction: column;
   flex-grow: 1;
 
+  .navbar-characters {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    .character, .new-character {
+      display: flex;
+      cursor: pointer;
+      .name {
+        padding: 0.5rem 0.75rem;
+        flex-grow: 1;
+        &:hover {
+          background-color: #28415b;
+        }
+      }
+    }
+    .new-character {
+      padding: 0.5rem 0.75rem;
+      &:hover {
+        background-color: #28415b;
+      }
+    }
+  }
+
   .container-fluid {
     flex-grow: 1;
     display: flex;

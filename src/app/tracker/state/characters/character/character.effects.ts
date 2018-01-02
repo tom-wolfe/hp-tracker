@@ -8,9 +8,10 @@ import { Actions, Effect } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
-import { AppState } from '../../../state';
-import * as Modals from '../modals';
-import { CharacterState } from './character.state';
+import { AppState } from '../../../../state';
+import * as Modals from '../../modals';
+import { currentCharacter } from '../characters.selectors';
+import { CharacterState } from '../characters.state';
 import * as Concentration from './concentration';
 import * as HP from './hp';
 
@@ -20,7 +21,7 @@ export class CharacterEffects {
 
   @Effect() concentrationCheck = this.actions$
     .ofType<HP.Hurt>(HP.HURT)
-    .withLatestFrom(this.store$.select(s => s.tracker.character))
+    .withLatestFrom(this.store$.select(s => s.tracker).select(currentCharacter))
     .mergeMap(([action, character]: [HP.Hurt, CharacterState], con: any) => {
       if (!character.concentration.concentrating) {
         return Observable.from([]);

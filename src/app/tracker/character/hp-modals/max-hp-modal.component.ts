@@ -2,7 +2,8 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { AppState } from '../../../state';
-import * as HP from '../../state/character/hp';
+import * as HP from '../../state/characters/character/hp';
+import { currentCharacter } from '../../state/characters/characters.selectors';
 import * as Modals from '../../state/modals';
 
 @Component({
@@ -17,7 +18,7 @@ export class MaxHPModalComponent {
 
   constructor(private store: Store<AppState>) {
     this.store.select(s => s.tracker.modals.maxHP).subscribe(show => this.show = show);
-    this.store.select(s => s.tracker.character.hp.max).subscribe(m => this.value = m);
+    this.store.select(s => s.tracker).select(currentCharacter).subscribe(c => this.value = c.hp.max);
   }
 
   setMaxHP() {

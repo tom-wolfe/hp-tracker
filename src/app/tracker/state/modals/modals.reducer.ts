@@ -10,6 +10,7 @@ export const initialState: ModalsState = {
   name: false,
   concentration: false,
   unconscious: false,
+  characterMenu: false,
 };
 
 export function modalsReducer(state: ModalsState = initialState, action: ModalsActions.Action): ModalsState {
@@ -18,22 +19,25 @@ export function modalsReducer(state: ModalsState = initialState, action: ModalsA
       return merge({}, initialState);
     }
     case ModalsActions.SHOW_MAX_HP: {
-      return merge({}, initialState, { maxHP: true });
+      return merge({}, state, { maxHP: true });
     }
     case ModalsActions.SHOW_TEMP_HP: {
-      return merge({}, initialState, { tempHP: true });
+      return merge({}, state, { tempHP: true });
     }
     case ModalsActions.SHOW_TEMP_MAX_HP: {
-      return merge({}, initialState, { tempMaxHP: true });
+      return merge({}, state, { tempMaxHP: true });
     }
     case ModalsActions.SHOW_NAME: {
-      return merge({}, initialState, { name: true });
+      return merge({}, state, { name: true });
     }
     case ModalsActions.SHOW_CONCENTRATION: {
-      return merge({}, initialState, { concentration: true });
+      return merge({}, state, { concentration: true });
     }
     case ModalsActions.SHOW_UNCONSCIOUS: {
-      return merge({}, initialState, { unconscious: true });
+      return merge({}, state, { unconscious: true });
+    }
+    case ModalsActions.TOGGLE_CHARACTER_MENU: {
+      return merge({}, state, { characterMenu: !state.characterMenu });
     }
     default: {
       return state;

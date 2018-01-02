@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { AppState } from '../../state';
-import { CharacterState } from '../state/character';
+import { CharacterState } from '../state/characters';
 import * as Modals from '../state/modals';
 
 @Component({

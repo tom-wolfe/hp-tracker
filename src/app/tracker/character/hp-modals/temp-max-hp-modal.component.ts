@@ -1,10 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { ModalComponent } from '../../../shared/modal/modal.component';
 import { AppState } from '../../../state';
-import * as HP from '../../state/character/hp';
+import * as HP from '../../state/characters/character/hp';
 import * as Modals from '../../state/modals';
+import { currentCharacter } from '../../state/characters/characters.selectors';
 
 @Component({
   selector: 'app-temp-max-hp-modal',
@@ -18,7 +18,7 @@ export class TempMaxHPModalComponent {
 
   constructor(private store: Store<AppState>) {
     this.store.select(s => s.tracker.modals.tempMaxHP).subscribe(show => this.show = show);
-    this.store.select(s => s.tracker.character.hp.tempMax).subscribe(m => this.value = m);
+    this.store.select(s => s.tracker).select(currentCharacter).subscribe(c => this.value = c.hp.tempMax);
   }
 
   setTempMaxHP() {

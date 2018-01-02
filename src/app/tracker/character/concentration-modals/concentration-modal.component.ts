@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { AppState } from '../../../state';
-import * as Concentration from '../../state/character/concentration';
+import * as Concentration from '../../state/characters/character/concentration';
+import { currentCharacter } from '../../state/characters/characters.selectors';
 import * as Modals from '../../state/modals';
 
 @Component({
@@ -15,7 +16,7 @@ export class ConcentrationModalComponent {
   dc = 10;
   constructor(private store: Store<AppState>) {
     this.store.select(s => s.tracker.modals.concentration).subscribe(show => this.show = show);
-    this.store.select(s => s.tracker.character.concentration.saveDC).subscribe(dc => this.dc = dc);
+    this.store.select(s => s.tracker).select(currentCharacter).subscribe(c => this.dc = c.concentration.saveDC);
   }
 
   pass() {

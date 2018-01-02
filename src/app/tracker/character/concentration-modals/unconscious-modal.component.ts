@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { AppState } from '../../../state';
-import * as Concentration from '../../state/character/concentration';
 import * as Modals from '../../state/modals';
 
 @Component({

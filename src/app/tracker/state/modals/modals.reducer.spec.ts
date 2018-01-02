@@ -83,4 +83,16 @@ describe('modalsReducer', () => {
       });
     });
   });
+  describe('toggle character menu action', () => {
+    it('should toggle character menu', () => {
+      const action = new Modals.ToggleCharacterMenu();
+      const state: Modals.ModalsState = Modals.initialState;
+
+      let result = Modals.modalsReducer(state, action);
+      expect(result.characterMenu).toEqual(true);
+
+      result = Modals.modalsReducer(result, action);
+      expect(result.characterMenu).toEqual(false);
+    });
+  });
 });
