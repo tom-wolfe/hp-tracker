@@ -5,7 +5,12 @@ import { StoreModule } from '@ngrx/store';
 import { SharedModule } from '../shared/shared.module';
 import { CharacterComponent } from './character/character.component';
 import { ConcentrationModalComponent, UnconsciousModalComponent } from './character/concentration-modals';
-import { MaxHPModalComponent, TempHPModalComponent, TempMaxHPModalComponent } from './character/hp-modals';
+import {
+  CurrentHPModalComponent,
+  MaxHPModalComponent,
+  TempHPModalComponent,
+  TempMaxHPModalComponent,
+} from './character/hp-modals';
 import { NameModalComponent } from './character/name-modal/name-modal.component';
 import { KeypadComponent } from './keypad';
 import { effects, metaReducers, reducers } from './state';
@@ -16,6 +21,7 @@ const COMPONENTS = [
   TrackerComponent,
   CharacterComponent,
   KeypadComponent,
+  CurrentHPModalComponent,
   MaxHPModalComponent,
   TempHPModalComponent,
   TempMaxHPModalComponent,

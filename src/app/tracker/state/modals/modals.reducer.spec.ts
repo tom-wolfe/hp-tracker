@@ -19,6 +19,22 @@ describe('modalsReducer', () => {
       });
     });
   });
+  describe('show current hp action', () => {
+    it('should show current HP modal', () => {
+      const action = new Modals.ShowCurrentHP();
+      const state: Modals.ModalsState = Modals.initialState;
+      const result = Modals.modalsReducer(state, action);
+      expect(result.currentHP).toEqual(true);
+    });
+    it('should show only max HP modal', () => {
+      const action = new Modals.ShowCurrentHP();
+      const state: Modals.ModalsState = Modals.initialState;
+      const result = Modals.modalsReducer(state, action);
+      Object.keys(result).forEach(k => {
+        expect(result[k]).toEqual(k === 'currentHP');
+      });
+    });
+  });
   describe('show max hp action', () => {
     it('should show max HP modal', () => {
       const action = new Modals.ShowMaxHP();

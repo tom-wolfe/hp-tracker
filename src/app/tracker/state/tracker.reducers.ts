@@ -51,7 +51,6 @@ export function randomizeEmptyName(reducer: ActionReducer<TrackerState>): Action
       });
     }
     nextState.characters.list.forEach(character => {
-      // TODO: Remove naming collisions
       character.name = character.name || RANDOM_NAMES[random(0, RANDOM_NAMES.length)];
     });
     return nextState;

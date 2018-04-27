@@ -2,7 +2,8 @@
   <h2 class="clickable" (click)="showName()">{{character.name}}</h2>
   <div class="card hp-display">
     <div class="card-body">
-      <p class="card-text"><span class="clickable">{{character.hp.current}}</span> /
+      <p class="card-text">
+        <span class="clickable" (click)="showCurrentHP()">{{character.hp.current}}</span> /
         <span class="clickable" (click)="showMaxHP()">{{character.hp.max}}</span>
         <sup class="clickable" (click)="showTempMaxHP()">(+ {{character.hp.tempMax}})</sup>
       </p>
@@ -18,6 +19,7 @@
     </div>
     <div class="card-footer">Temporary Hit Points</div>
   </div>
+  <app-current-hp-modal></app-current-hp-modal>
   <app-max-hp-modal></app-max-hp-modal>
   <app-temp-hp-modal></app-temp-hp-modal>
   <app-temp-max-hp-modal></app-temp-max-hp-modal>

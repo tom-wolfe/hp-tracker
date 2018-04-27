@@ -9,14 +9,20 @@ export const initialState: HPState = {
   tempMax: 0,
 };
 
+function boundedHP(curState: HPState, value: number): number {
+  const max = curState.max + curState.tempMax;
+  if (value < 0) { return 0; }
+  return Math.min(max, value);
+}
+
 export function hpReducer(state: HPState = initialState, action: HPActions.Action): HPState {
   switch (action.type) {
+    case HPActions.SET_CURRENT: {
+      return merge({}, state, { current: boundedHP(state, Number(action.current)) });
+    }
     case HPActions.SET_MAX: {
       const newState = merge({}, state, { max: Number(action.max) });
-      const max = newState.max + newState.tempMax;
-      if (newState.current > max) {
-        newState.current = max;
-      }
+      newState.current = boundedHP(newState, newState.current);
       return newState;
     }
     case HPActions.TEMP_HP: {
@@ -24,15 +30,12 @@ export function hpReducer(state: HPState = initialState, action: HPActions.Actio
     }
     case HPActions.TEMP_MAX_HP: {
       const tempMax = Number(action.amount);
-      return merge({}, state, {
-        tempMax,
-        current: Math.min(state.current, state.max + tempMax),
-      });
+      const newState = merge({}, state, { tempMax });
+      newState.current = boundedHP(newState, newState.current);
+      return newState;
     }
     case HPActions.HEAL: {
-      return merge({}, state, {
-        current: Math.min(state.max + state.tempMax, state.current + action.amount)
-      });
+      return merge({}, state, { current: boundedHP(state, state.current + action.amount) });
     }
     case HPActions.HURT: {
       const newState = merge({}, state);
@@ -43,7 +46,7 @@ export function hpReducer(state: HPState = initialState, action: HPActions.Actio
           newState.temp = 0;
         }
       } else {
-        newState.current = Math.max(0, newState.current - action.amount);
+        newState.current = boundedHP(newState, newState.current - action.amount);
       }
       return newState;
     }

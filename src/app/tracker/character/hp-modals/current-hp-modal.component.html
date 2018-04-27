@@ -1,0 +1,14 @@
+<app-modal [show]="show" (shown)="onShown()">
+  <div class="modal-body">
+    <div class="form-group row">
+      <label for="currentHP" class="col-sm-3 col-form-label col-form-label-lg">Current HP</label>
+      <div class="col-sm-9">
+        <input #input type="number" pattern="\d*" class="form-control form-control-lg" id="currentHP" placeholder="30" [(ngModel)]="value" (keydown.enter)="setCurrentHP()">
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-lg btn-primary" (click)="setCurrentHP()">Set Current</button>
+    <app-modal-close-footer (click)="close()"></app-modal-close-footer>
+  </div>
+</app-modal>

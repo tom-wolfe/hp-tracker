@@ -1,4 +1,5 @@
 export interface ModalsState {
+  currentHP: boolean;
   maxHP: boolean;
   tempHP: boolean;
   tempMaxHP: boolean;

@@ -30,6 +30,10 @@ export class CharacterComponent {
     return '#e12e1c';
   }
 
+  showCurrentHP() {
+    this.store.dispatch(new Modals.ShowCurrentHP());
+  }
+
   showMaxHP() {
     this.store.dispatch(new Modals.ShowMaxHP());
   }

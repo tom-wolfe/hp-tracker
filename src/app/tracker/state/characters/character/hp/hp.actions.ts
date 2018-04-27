@@ -1,10 +1,16 @@
 import { Action } from '@ngrx/store';
 
+export const SET_CURRENT = '[HP] Set Current';
 export const SET_MAX = '[HP] Set Max';
 export const HEAL = '[HP] Heal';
 export const HURT = '[HP] Hurt';
 export const TEMP_HP = '[HP] Temporary Hit Points';
 export const TEMP_MAX_HP = '[HP] Temporary Max Hit Points';
+
+export class SetCurrent implements Action {
+  readonly type = SET_CURRENT;
+  constructor(public current: number) { }
+}
 
 export class SetMax implements Action {
   readonly type = SET_MAX;
@@ -31,4 +37,4 @@ export class SetTemporaryMaxHP implements Action {
   constructor(public amount: number) { }
 }
 
-export type Action = SetMax | Heal | Hurt | SetTemporaryHP | SetTemporaryMaxHP;
+export type Action = SetCurrent | SetMax | Heal | Hurt | SetTemporaryHP | SetTemporaryMaxHP;

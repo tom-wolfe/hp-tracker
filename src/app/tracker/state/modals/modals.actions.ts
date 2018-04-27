@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
 
 export const CLOSE_ALL = '[Modals] Close All';
+export const SHOW_CURRENT_HP = '[Modals] Show Current HP';
 export const SHOW_MAX_HP = '[Modals] Show Max HP';
 export const SHOW_TEMP_HP = '[Modals] Show Temporary HP';
 export const SHOW_TEMP_MAX_HP = '[Modals] Show Temporary Max HP';
@@ -11,6 +12,11 @@ export const TOGGLE_CHARACTER_MENU = '[Modals] Toggle Character Menu'
 
 export class CloseAll implements Action {
   readonly type = CLOSE_ALL;
+  constructor() { }
+}
+
+export class ShowCurrentHP implements Action {
+  readonly type = SHOW_CURRENT_HP;
   constructor() { }
 }
 
@@ -49,5 +55,5 @@ export class ToggleCharacterMenu implements Action {
   constructor() { }
 }
 
-export type Action = CloseAll | ShowMaxHP | ShowTemporaryHP | ShowTemporaryMaxHP | ShowName | ShowConcentration | ShowUnconscious |
-  ToggleCharacterMenu;
+export type Action = CloseAll | ShowCurrentHP | ShowMaxHP | ShowTemporaryHP | ShowTemporaryMaxHP | ShowName | ShowConcentration | 
+  ShowUnconscious | ToggleCharacterMenu;
